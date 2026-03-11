@@ -1,13 +1,13 @@
 # Cultural Equilibrium - Datasets
 
-Thư mục chứa các datasets sử dụng cho dự án Cultural Equilibrium.
+Directory containing datasets used for the Cultural Equilibrium project.
 
-## 📊 Tổng quan
+## 📊 Overview
 
-| Dataset | Kích thước | Số samples | Trạng thái |
-|---------|------------|------------|------------|
-| **CulturePark** | 7.2 MB | 41,000+ | ✅ Đã tải về |
-| **NORMAD** | 46 MB | 2,630+ | ⚠️ Cần giải mã |
+| Dataset | Size | Number of Samples | Status |
+|---------|------|-------------------|--------|
+| **CulturePark** | 7.2 MB | 41,000+ | ✅ Downloaded |
+| **NORMAD** | 46 MB | 2,630+ | ⚠️ Requires decryption |
 
 ---
 
@@ -18,38 +18,38 @@ Thư mục chứa các datasets sử dụng cho dự án Cultural Equilibrium.
 **GitHub:** https://github.com/Scarelette/CulturePark  
 **arXiv:** https://arxiv.org/abs/2405.15145
 
-### 📁 Cấu trúc dữ liệu
+### 📁 Data Structure
 
 ```
 data/culturepark/
 ├── data/
-│   ├── Chinese/          # Dữ liệu văn hóa Trung Quốc
-│   ├── Arabic/           # Dữ liệu văn hóa Ả Rập
-│   ├── German/           # Dữ liệu văn hóa Đức
-│   ├── Korean/           # Dữ liệu văn hóa Hàn Quốc
-│   ├── Spanish/          # Dữ liệu văn hóa Tây Ban Nha
-│   ├── Portuguese/       # Dữ liệu văn hóa Bồ Đào Nha
-│   ├── Bengali/          # Dữ liệu văn hóa Bengal
-│   ├── Turkish/          # Dữ liệu văn hóa Thổ Nhĩ Kỳ
+│   ├── Chinese/          # Chinese cultural data
+│   ├── Arabic/           # Arabic cultural data
+│   ├── German/           # German cultural data
+│   ├── Korean/           # Korean cultural data
+│   ├── Spanish/          # Spanish cultural data
+│   ├── Portuguese/       # Portuguese cultural data
+│   ├── Bengali/          # Bengali cultural data
+│   ├── Turkish/          # Turkish cultural data
 │   ├── WVQ.csv           # World Values Questionnaire
-│   └── WVQ.jsonl         # WVQ format JSONL
-├── data_process.py       # Script xử lý dữ liệu
-├── main.py               # Script generation chính
+│   └── WVQ.jsonl         # WVQ JSONL format
+├── data_process.py       # Data processing script
+├── main.py               # Main generation script
 └── README.md             # Documentation
 ```
 
-### 📍 Các vùng văn hóa (12 dimensions)
+### 📍 Cultural Regions (12 dimensions)
 
-Dataset bao gồm dữ liệu từ 8+ quốc gia/vùng lãnh thổ, mapping theo Hofstede's cultural dimensions:
+The dataset includes data from 8+ countries/regions, mapped according to Hofstede's cultural dimensions:
 
-1. **Power Distance** - Khoảng cách quyền lực
-2. **Individualism vs Collectivism** - Cá nhân vs Tập thể
-3. **Masculinity vs Femininity** - Nam tính vs Nữ tính
-4. **Uncertainty Avoidance** - Tránh né rủi ro
-5. **Long-term Orientation** - Định hướng dài hạn
-6. **Indulgence vs Restraint** - Khoan dung vs Kiềm chế
+1. **Power Distance**
+2. **Individualism vs Collectivism**
+3. **Masculinity vs Femininity**
+4. **Uncertainty Avoidance**
+5. **Long-term Orientation**
+6. **Indulgence vs Restraint**
 
-### 🔧 Sử dụng
+### 🔧 Usage
 
 ```python
 # Load CulturePark data
@@ -73,48 +73,48 @@ germany_df = pd.read_csv('data/culturepark/data/Germany/Germany.csv')
 **GitHub:** https://github.com/Akhila-Yerukola/NormAd  
 **HuggingFace:** https://huggingface.co/datasets/akhilayerukola/NormAd
 
-### 📁 Cấu trúc dữ liệu
+### 📁 Data Structure
 
 ```
 data/normad/
 ├── data_and_heval/
-│   ├── datasets.zip.enc      # Dataset chính (encrypted)
+│   ├── datasets.zip.enc      # Main dataset (encrypted)
 │   ├── human_eval_inhouse/   # Human evaluation (in-house)
 │   └── human_eval_mturk/     # Human evaluation (MTurk)
-├── story_prompts/            # Prompts cho story generation
+├── story_prompts/            # Prompts for story generation
 ├── conf/                     # Configuration files
 ├── src/                      # Source code
 └── README.md                 # Documentation
 ```
 
-### ⚠️ Lưu ý quan trọng
+### ⚠️ Important Note
 
-Dataset chính (`datasets.zip.enc`) **được mã hóa**. Để truy cập:
+The main dataset (`datasets.zip.enc`) **is encrypted**. To access:
 
-1. **Liên hệ authors:** Email cho Akhila Yerukola (akhila@seas.upenn.edu) để xin key giải mã
-2. **Sử dụng HuggingFace:** Load trực tiếp từ HuggingFace datasets:
+1. **Contact authors:** Email Akhila Yerukola (akhila@seas.upenn.edu) for decryption key
+2. **Use HuggingFace:** Load directly from HuggingFace datasets:
    ```python
    from datasets import load_dataset
    normad = load_dataset("akhilayerukola/NormAd", split="train")
    ```
-3. **Sử dụng GitHub data:** Một số data samples có sẵn trong `story_prompts/` và `src/analysis/`
+3. **Use GitHub data:** Some data samples are available in `story_prompts/` and `src/analysis/`
 
 ### 📊 Dataset Statistics
 
-- **2,630+ samples** (train split trên HuggingFace)
-- **75 countries** được cover
+- **2,630+ samples** (train split on HuggingFace)
+- **75 countries** covered
 - **305 cultural backgrounds**
 - **20 cultural sub-axes**
 
-### 🔧 Sử dụng (HuggingFace)
+### 🔧 Usage (HuggingFace)
 
 ```python
 from datasets import load_dataset
 
-# Load từ HuggingFace
+# Load from HuggingFace
 normad = load_dataset("akhilayerukola/NormAd", split="train")
 
-# Xem columns
+# View columns
 print(normad.column_names)
 # ['ID', 'Country', 'Background', 'Axis', 'Subaxis', 
 #  'Value', 'Rule-of-Thumb', 'Story', 'Explanation', 'Gold Label']
@@ -128,9 +128,9 @@ print(f"Label: {sample['Gold Label']}")
 
 ---
 
-## 3. Kết hợp Datasets
+## 3. Combining Datasets
 
-Để tạo dataset training cho Cultural Equilibrium:
+To create a training dataset for Cultural Equilibrium:
 
 ```python
 import pandas as pd
@@ -144,7 +144,7 @@ for csv_file in Path('data/culturepark/data').rglob('*.csv'):
     culturepark_data.append(df)
 culturepark_df = pd.concat(culturepark_data, ignore_index=True)
 
-# Load NORMAD (từ HuggingFace)
+# Load NORMAD (from HuggingFace)
 from datasets import load_dataset
 normad = load_dataset("akhilayerukola/NormAd", split="train")
 normad_df = normad.to_pandas()
@@ -157,7 +157,7 @@ print(f"Total samples: {len(combined_df)}")
 
 ---
 
-## 📝 Hướng dẫn tải về (cho người dùng sau)
+## 📝 Download Instructions (for future users)
 
 ### CulturePark
 
@@ -168,14 +168,14 @@ git clone https://github.com/Scarelette/CulturePark.git .
 
 ### NORMAD
 
-**Option 1: Từ GitHub**
+**Option 1: From GitHub**
 ```bash
 cd data/normad
 git clone https://github.com/Akhila-Yerukola/NormAd.git .
-# Lưu ý: datasets.zip.enc cần key giải mã từ authors
+# Note: datasets.zip.enc requires decryption key from authors
 ```
 
-**Option 2: Từ HuggingFace (recommended)**
+**Option 2: From HuggingFace (recommended)**
 ```python
 from datasets import load_dataset
 normad = load_dataset("akhilayerukola/NormAd", split="train")
@@ -184,7 +184,7 @@ normad.to_json("data/normad/normad_train.json")
 
 ---
 
-## 📊 Statistics (tổng hợp)
+## 📊 Statistics (Summary)
 
 | Metric | CulturePark | NORMAD | Total |
 |--------|-------------|--------|-------|
