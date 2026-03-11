@@ -214,6 +214,6 @@ normad.to_json("data/normad/normad_train.json")
 
 **Author:** Thang Nguyen Xuan  
 **Institution:** Hanoi University, Vietnam  
-**Email:** nxthang@hanu.edu.vn
+
 
 **Last Updated:** 2026-03-11
