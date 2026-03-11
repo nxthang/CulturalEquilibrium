@@ -180,13 +180,11 @@ python tests/test_ceaf.py
 ## 📝 License
 
 Code belongs to the Cultural Equilibrium research project.
-Contact: nxthang@hanu.edu.vn
 
 ## 📞 Contact
 
 **Author:** Thang Nguyen Xuan  
 **Institution:** Hanoi University, Vietnam  
-**Email:** nxthang@hanu.edu.vn
 
 ---
 
