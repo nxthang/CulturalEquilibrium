@@ -5,7 +5,7 @@ Game-theoretic approach to cultural alignment of LLMs using Nash Equilibrium.
 
 Author: Thang Nguyen Xuan
 Institution: Hanoi University, Vietnam
-Email: nxthang@hanu.edu.vn
+
 """
 
 import torch
