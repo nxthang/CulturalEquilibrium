@@ -13,7 +13,7 @@ Usage:
 
 Author: Thang Nguyen Xuan
 Institution: Hanoi University, Vietnam
-Email: nxthang@hanu.edu.vn
+
 """
 
 import argparse
